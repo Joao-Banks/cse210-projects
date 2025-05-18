@@ -1,0 +1,41 @@
++------------------------------+
+|           Entry             |
++------------------------------+
+| - date: str                 |
+| - prompt: str               |
+| - response: str            |
++------------------------------+
+| + __init__(date, prompt, response) |
+| + to_dict(): dict          |
+| + from_dict(d: dict): Entry |
++------------------------------+
+
+
+             ▲ used by
+             |
+             |
++------------------------------+
+|          Journal            |
++------------------------------+
+| - entries: list[Entry]      |
++------------------------------+
+| + add_entry(entry: Entry): None       |
+| + display_entries(): None             |
+| + save_to_file(filename: str): None   |
+| + load_from_file(filename: str): None |
++------------------------------+
+
+
+             ▲ used by
+             |
+             |
++------------------------------+
+|         JournalApp          |
++------------------------------+
+| - journal: Journal          |
+| - prompts: list[str]        |
++------------------------------+
+| + show_menu(): None         |
+| + write_entry(): None       |
+| + run(): None               |
++------------------------------+
